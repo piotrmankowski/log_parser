@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'pry'
+require_relative '../lib/parser.rb'
+
+file_path = ARGV[0]
+
+if file_path
+  Parser.new(file_path).call
+else
+  puts 'Missing file path! Proper usage: bin/parse PATH_TO_FILE'
+end
